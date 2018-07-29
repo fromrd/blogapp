@@ -2,6 +2,9 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   
   def index
+  end
+  
+  def blogdates
     @blogs = Blog.all
   end
 
@@ -16,7 +19,7 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     if @blog.save
-      redirect_to blogs_path, notice: "ブログを作成しました！"
+      redirect_to blogdates_blogs_path, notice: "ブログを作成しました！"
     else
       render 'new'
     end
@@ -30,7 +33,7 @@ class BlogsController < ApplicationController
   
   def update
     if @blog.update(blog_params)
-      redirect_to blogs_path, notice:"ブログを編集しました！"
+      redirect_to blogdates_blogs_path, notice:"ブログを編集しました！"
     else
       render 'edit'
     end
@@ -38,7 +41,7 @@ class BlogsController < ApplicationController
   
   def destroy
     @blog.destroy
-      redirect_to blogs_path, notice:"ブログを削除しました！"
+      redirect_to blogdates_blogs_path, notice:"ブログを削除しました！"
   end
   
   def confirm

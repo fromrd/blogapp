@@ -1,3 +1,131 @@
-// Place all the styles related to the blogs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+li {
+    list-style: none;
+}
+
+ul {
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    background-color: #F5B4B3;
+    height: 54px;
+}
+
+header p {
+    float: left;
+    padding: 10px;
+    color: white;
+    display: block;
+    font-size: 2rem;
+}
+
+img {
+    width: 100%;
+    padding: 20px 120px 0px 120px;
+}
+
+h1 {
+    padding-bottom: 5px;
+}
+
+
+.menu {
+    width: 100%;
+    background-color: #F08080;
+    color: white;
+}
+
+.menu li {
+    padding: 2% 10%;
+    font-size: 1.5rem;
+}
+
+div, p {
+    // border-style: solid;
+    // border-widht: 1px;
+}
+
+.label-default {
+    font-size: 2rem;
+}
+
+body {
+    // background-color: #7fffd4;
+}
+
+div.blog-panel {
+    height: 200px;
+    margin :20px 0;
+    padding: 10px;
+}
+
+.detail {
+    padding-top: 10px;
+}
+
+footer {
+    width: 100%;
+    background-color: #A97443;
+    height: 70px;
+    position: fixed;
+    bottom: 0;
+    color: white;
+}
+
+footer p {
+    padding: 20px;
+}
+
+html {
+    width: 100%;    
+    min-height: 100%;
+}
+
+body{
+    width: 100%;
+    margin: 0 auto;
+    text-align:center;
+}
+
+.container {
+    margin-top: 5px;
+}
+// li{
+//     list-style:none;
+// }
+
+// ul{
+//     padding:0;
+// }
+
+// .header{
+//     font-size:20px;
+//     font-weight:bold;
+//     text-align:center;
+// }
+
+// .menu li {
+//     background-color:#012F4B;
+//     color:#fff;
+//     padding:5% 10%;
+//     text-align:center;
+// }
+
+// .contents li{
+//     background-color:#F3A7AB;
+//     color:#fff;
+//     padding:10% 10%;
+//     box-sizing: border-box;
+//     border: solid 1px #fff;
+// }
+
+// .topic li{
+//     margin:1%;
+//     border-bottom: dotted 1px #333333;
+// }
+
+// .container{
+//     margin-top:20px;
+//     padding-bottom: 100px;
+// }

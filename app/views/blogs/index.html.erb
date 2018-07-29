@@ -1,21 +1,22 @@
-<h1>ブログ一覧</h1>
-
-<p><%= notice %></p>
-<table>
-    <tr>
-        <th>タイトル</th>
-        <th>内容</th>
-    </tr>
+<!--<div class="container">-->
+<!--    <div id="new-blog-link">-->
+<!--        <%#= link_to '新規にブログを作成する', new_blog_path %>-->
+<!--    </div>-->
     
-<% @blogs.each do |blog| %>
-    <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.content %></td>
-        <td><%= link_to '詳細を確認する', blog_path(blog.id) %></td>
-        <td><%= link_to 'ブログを編集する', edit_blog_path(blog.id), data: {confirm: '本当に編集していいですか？'} %></td>
-        <td><%= link_to 'ブログを削除する', blog_path(blog.id), method: :delete, data: {confirm: '本当に削除していいですか？'} %></td>
-    </tr>
-<% end %>
-</table>
+<!--    <%# @blogs.each do |blog| %>-->
+<!--    <div class="blog-panel">-->
+<!--        <h2><%#= blog.title %></h2>-->
+<!--        <p><%#= blog.content %></p>-->
+<!--        <div class="blog_links">-->
+<!--            <%#= link_to 'Show', blog, class: 'btn btn_default' %>-->
+<!--            <%#= link_to 'Edit', edit_blog_path(blog), class: 'btn btn_info' %>-->
+<!--            <%#= link_to 'Destroy', blog, method: :delete, data: {confirm: 'Are you sure?' }, class: 'btn btn_danger' %>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <%# end %>-->
+<!--</div>-->
 
-<%= link_to '新しくブログを投稿する', new_blog_path %>
+<img src="/assets/top.png">
+<h1>Blog application</h1>
+<%= link_to 'Click here to start', blogdates_blogs_path, class: "label label-default" %>
+<p class="detail">ブログアプリケーションです。</p>
