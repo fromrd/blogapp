@@ -1,6 +1,6 @@
 <h3>以下の内容で、送信する。</h3>
 
-<%= form_with(model: @blog, url: blogdates_blogs_path, local: true) do |form| %>
+<%= form_with(model: @blog, url: blogdates_blogs_path, local: true, method: 'get') do |form| %>
     <%= form.hidden_field :title %>
     <%= form.hidden_field :content %>
     
