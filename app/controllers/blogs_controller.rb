@@ -8,6 +8,7 @@ class BlogsController < ApplicationController
     @blogs = Blog.all
   end
 
+
   def new
     if params[:back]
       @blog = Blog.new(blog_params)
@@ -18,11 +19,13 @@ class BlogsController < ApplicationController
     
   def create
     @blog = Blog.new(blog_params)
-    if @blog.save
-      redirect_to blogdates_blogs_path, notice: "ブログを作成しました！"
-    else
-      render 'new'
-    end
+    @blog.save
+    # if @blog.save
+    redirect_to blogdates_blogs_path, notice: "ブログを作成しました！"
+    # else
+    #   render 'new'
+    # end
+    # render blogdates_blogs_path
   end
   
   def show
@@ -46,7 +49,6 @@ class BlogsController < ApplicationController
   
   def confirm
     @blog = Blog.new(blog_params)
-    render :new if @blog.invalid?
   end
   
   private

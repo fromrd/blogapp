@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     collection do
       post :confirm
       get :blogdates
+      post :blogdates
     end
   end
 end

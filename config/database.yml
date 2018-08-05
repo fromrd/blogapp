@@ -18,3 +18,4 @@ production:
   database: sample_production
   username: sample
   password: <%= ENV['SAMPLE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
