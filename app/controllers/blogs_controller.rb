@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_action :current_user, only: [:new, :edit, :show, :destroy]
+  before_action :log_in, only: [:new, :edit, :show, :destroy]
   
   def index
   end
@@ -8,8 +10,8 @@ class BlogsController < ApplicationController
     @blogs = Blog.all
   end
 
-
   def new
+    
     if params[:back]
       @blog = Blog.new(blog_params)
     else
@@ -51,6 +53,12 @@ class BlogsController < ApplicationController
     @blog = Blog.new(blog_params)
   end
   
+  def log_in
+    if @current_user.nil?
+      redirect_to new_session_path
+    end
+  end  
+    
   private
   def blog_params
     params.require(:blog).permit(:title, :content)

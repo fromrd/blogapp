@@ -10,12 +10,17 @@
   </head>
 
   <body>
-    
-    
-    
-    
     <header>
       <p>Blog App</p>
+      <ul class="session">
+        <% if logged_in? %>
+          <li><%= link_to 'Profile', user_path(current_user.id) %></li>
+          <li><%= link_to 'Log out', session_path(current_user.id), method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'Sign Up', new_user_path %></li>
+          <li><%= link_to 'Log in', new_session_path %></li>
+        <% end %>        
+      </ul>
     </header>
     <nav class="menu">
       <div class="container">
@@ -26,6 +31,10 @@
         </ul>
       </div>
     </nav>
+
+    <% flash.each do |key, value| %>
+      <% content_tag(:div, value, class: "#{key}") %>
+    <% end %>
 
     <%= yield %>
     
