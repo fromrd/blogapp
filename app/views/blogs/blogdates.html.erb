@@ -27,9 +27,12 @@
     <p>Content：<%= blog.content %></p>
     <!--<p><%#= blog.created_at %></p>-->
     <div class="blog-links">
+    <% if @current_user.nil? %>
+    <% else %>
       <%= link_to 'Show', blog, class: 'btn btn-default' %>
       <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-info' %> |
       <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    <% end %>
     </div>
   </div>
 <% end %>

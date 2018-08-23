@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_action :current_user, only: [:new, :edit, :show, :destroy]
+  before_action :current_user, only: [:new, :edit, :show, :destroy, :blogdates]
   before_action :log_in, only: [:new, :edit, :show, :destroy]
   
   def index
