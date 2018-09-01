@@ -13,11 +13,10 @@
       
     <% unless @current_user.nil? %>
       <%= link_to 'Show', blog, class: 'btn btn-default' %>
-    <% end %>
-    
-    <% if @current_user.id == blog.user_id %>
-      <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-info' %> |
-      <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      <% if @current_user.id == blog.user_id %>
+        <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-info' %> |
+        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      <% end %>
     <% end %>
     </div>
   </div>
