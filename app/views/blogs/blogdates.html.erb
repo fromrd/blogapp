@@ -1,20 +1,3 @@
-<!--<div class="container">-->
-<!--    <div id="new-blog-link">-->
-<!--        <%#= link_to '新規にブログを作成する', new_blog_path %>-->
-<!--    </div>-->
-    
-<!--    <%# @blogs.each do |blog| %>-->
-<!--    <div class="blog-panel">-->
-<!--        <h2><%#= blog.title %></h2>-->
-<!--        <p><%#= blog.content %></p>-->
-<!--        <div class="blog_links">-->
-<!--            <%#= link_to 'Show', blog, class: 'btn btn_default' %>-->
-<!--            <%#= link_to 'Edit', edit_blog_path(blog), class: 'btn btn_info' %>-->
-<!--            <%#= link_to 'Destroy', blog, method: :delete, data: {confirm: 'Are you sure?' }, class: 'btn btn_danger' %>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <%# end %>-->
-<!--</div>-->
 <h1>ブログ一覧</h1>
 
 <div id="new-blog-link">
@@ -27,9 +10,12 @@
     <p>Content：<%= blog.content %></p>
     <!--<p><%#= blog.created_at %></p>-->
     <div class="blog-links">
-    <% if @current_user.nil? %>
-    <% else %>
+      
+    <% unless @current_user.nil? %>
       <%= link_to 'Show', blog, class: 'btn btn-default' %>
+    <% end %>
+    
+    <% if @current_user.id == blog.user_id %>
       <%= link_to 'Edit', edit_blog_path(blog), class: 'btn btn-info' %> |
       <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
     <% end %>

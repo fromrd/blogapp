@@ -8,6 +8,7 @@ class BlogsController < ApplicationController
   
   def blogdates
     @blogs = Blog.all
+    # @myblogs = Blog.select("user_id")
   end
 
   def new
@@ -21,16 +22,14 @@ class BlogsController < ApplicationController
     
   def create
     @blog = Blog.new(blog_params)
+    @blog.user_id = current_user.id
     @blog.save
-    # if @blog.save
     redirect_to blogdates_blogs_path, notice: "ブログを作成しました！"
-    # else
-    #   render 'new'
-    # end
-    # render blogdates_blogs_path
+    
   end
   
   def show
+    @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
   
   def edit
