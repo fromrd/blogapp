@@ -12,7 +12,6 @@ class BlogsController < ApplicationController
   end
 
   def new
-    
     if params[:back]
       @blog = Blog.new(blog_params)
     else
@@ -23,9 +22,12 @@ class BlogsController < ApplicationController
   def create
     @blog = Blog.new(blog_params)
     @blog.user_id = current_user.id
-    @blog.save
-    CreateMailer.create_mail(@blog).deliver
-    redirect_to blogdates_blogs_path, notice: 'ブログを作成しました！'
+    if @blog.save
+      CreateMailer.create_mail(@blog).deliver
+      redirect_to blogdates_blogs_path, notice: 'ブログを作成しました！'
+    else
+      render 'new'
+    end
   end
   
   def show
@@ -33,6 +35,7 @@ class BlogsController < ApplicationController
   end
   
   def edit
+    @blog.image.cache! unless @blog.image.blank?
   end
   
   def update
@@ -61,7 +64,7 @@ class BlogsController < ApplicationController
   private
   
     def blog_params
-      params.require(:blog).permit(:title, :content)
+      params.require(:blog).permit(:title, :content, :image, :image_cache)
     end
     
     def set_blog

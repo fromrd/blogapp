@@ -11,13 +11,17 @@
     <% end %>
             
     <div class="blog_title">
-        <%= form.label :title %>
-        <%= form.text_field :title %>
+        <p><%= form.label :title %></p>
+        <p><%= form.text_field :title %></p>
     </div>
     <div class="blog_title">
-        <%= form.label :content %>
-        <%= form.text_field :content %>
+        <p><%= form.label :content %></p>
+        <p><%= form.text_field :content %></p>
     </div>
-    <%= form.submit %>
-
+    <div class="blog_title">
+        <div class="image_box"><%= form.label :image %></div>
+        <%= image_tag(@blog.image.url) if @blog.image.url %>
+        <div class="image_box"><%= form.file_field :image, id: :blog_image %></div>
+    </div>
+    <p><%= form.submit %></p>
 <% end %>

@@ -12,17 +12,21 @@
 <% end %>
 
 <%= form_with(model: @user, local: true) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <p><%= f.label :name %></p>
+    <p><%= f.text_field :name %></p>
     
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+    <p><%= f.label :email %></p>
+    <p><%= f.email_field :email %></p>
 
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <p><%= f.label :password %></p>
+    <p><%= f.password_field :password %></p>
     
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+    <p><%= f.label :password_confirmation %></p>
+    <p><%= f.password_field :password_confirmation %></p>
     
+    <div class="blog_title">
+        <p><%= f.label :icon %></p>
+        <p><%= f.file_field :image, id: :user_image %></p>
+    </div>
     <%= f.submit "Create my account" %>
 <% end %>

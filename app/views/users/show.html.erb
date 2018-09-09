@@ -1,6 +1,8 @@
 <div>
     <h1><%= @user.name %>のページ</h1>
     <p>メールアドレス：<%= @user.email %></p>
+    <p>アイコン:</p>
+    <p id="images"><%= image_tag @user.image %></p>
 </div>
 
 <div>

@@ -35,8 +35,10 @@
     <% flash.each do |key, value| %>
       <% content_tag(:div, value, class: "#{key}") %>
     <% end %>
-
+    
+    <div class="wide_content">
     <%= yield %>
+    </div>
     
     <footer>
       <p>運営会社DIVE INTO CODE株式会社</p>
