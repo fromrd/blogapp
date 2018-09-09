@@ -1,10 +1,9 @@
-<div>
+<div class="user_page">
+    <%= image_tag @user.image %>
     <h1><%= @user.name %>のページ</h1>
-    <p>メールアドレス：<%= @user.email %></p>
-    <p>アイコン:</p>
-    <p id="images"><%= image_tag @user.image %></p>
-</div>
 
+</div>
+    <p>メールアドレス：<%= @user.email %></p><br>
 <div>
     <h2>お気に入り一覧</h2>
     <% @favorites_blogs.each do |favorite_blog| %>
